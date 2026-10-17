@@ -156,6 +156,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Opcional: Ativa a compressão e cache do WhiteNoise para deixar o app mais rápido
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 # ============================================================
 # Arquivos enviados pelos usuários
 # ============================================================
